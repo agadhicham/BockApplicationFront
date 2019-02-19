@@ -1,0 +1,168 @@
+<form class="uk-form-stacked">
+
+  <div class="uk-margin">
+    <label class="uk-form-label" for="1">Name Of Boock</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" id="1" type="text" placeholder="Some text..." name="boock_name" [(ngModel)]="boock_data.boock_name"
+             required minlength="4" appForbiddenName="bob"
+             #boock_name="ngModel">
+      <div *ngIf="boock_name.invalid && (boock_name.dirty || boock_name.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="boock_name.errors.required" class="uk-alert-danger" uk-alert>
+          boock_name is required.
+        </div>
+        <div *ngIf="boock_name.errors.minlength" class="uk-alert-danger" uk-alert>
+          boock_name must be at least 4 characters long.
+        </div>
+        <div *ngIf="boock_name.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+          boock_name cannot be Bob.
+        </div>
+      </div>
+    </div>
+    <div class="uk-margin">
+      <label class="uk-form-label" for="2">Autor Of Boock</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" id="2" type="text" placeholder="Some text..." name="boock_autor" [(ngModel)]="boock_data.boock_autor"
+               required minlength="4" appForbiddenName="bob"
+               #boock_autor="ngModel">
+        <div *ngIf="boock_autor.invalid && (boock_autor.dirty || boock_autor.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="boock_autor.errors.required" class="uk-alert-danger" uk-alert>
+            boock_autor is required.
+          </div>
+          <div *ngIf="boock_autor.errors.minlength" class="uk-alert-danger" uk-alert>
+            boock_autor must be at least 4 characters long.
+          </div>
+          <div *ngIf="boock_autor.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+            boock_autor cannot be Bob.
+          </div>
+        </div>
+      </div>
+    </div> <div class="uk-margin">
+    <label class="uk-form-label" for="3">Date of storage</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" id="3" type="date" placeholder="Some text..." name="date_storage" [(ngModel)]="boock_data.date_storage"
+             required minlength="4" appForbiddenName="bob"
+             #date_storage="ngModel">
+      <div *ngIf="date_storage.invalid && (date_storage.dirty || date_storage.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="date_storage.errors.required" class="uk-alert-danger" uk-alert>
+          date_storage is required.
+        </div>
+        <div *ngIf="date_storage.errors.minlength" class="uk-alert-danger" uk-alert>
+          date_storage must be at least 4 characters long.
+        </div>
+        <div *ngIf="date_storage.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+          date_storage cannot be Bob.
+        </div>
+      </div>
+    </div>
+  </div> <div class="uk-margin">
+    <label class="uk-form-label" for="4">Edition</label>
+    <div class="uk-form-controls">
+      <input class="uk-input" id="4" type="text" placeholder="Some text..." name="edition" [(ngModel)]="boock_data.edition"
+             required minlength="4" appForbiddenName="bob"
+             #edition="ngModel">
+      <div *ngIf="edition.invalid && (edition.dirty || edition.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="edition.errors.required" class="uk-alert-danger" uk-alert>
+          edition is required.
+        </div>
+        <div *ngIf="edition.errors.minlength" class="uk-alert-danger" uk-alert>
+          edition must be at least 4 characters long.
+        </div>
+        <div *ngIf="edition.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+          edition cannot be Bob.
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="uk-margin">
+      <label class="uk-form-label" >Short resume</label>
+      <div class="uk-form-controls">
+              <textarea class="uk-textarea" rows="5" placeholder="Textarea"  name="resume" [(ngModel)]="boock_data.resume"
+                        required minlength="20" appForbiddenName="bob"
+                        #resume="ngModel"></textarea>
+        <div *ngIf="boock_name.invalid && (boock_name.dirty || boock_name.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="resume.errors.required" class="uk-alert-danger" uk-alert>
+            resume is required.
+          </div>
+          <div *ngIf="resume.errors.minlength" class="uk-alert-danger" uk-alert>
+            resume must be at least 20 characters long.
+          </div>
+          <div *ngIf="resume.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+            resume cannot be Bob.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-margin">
+      <label class="uk-form-label" for="form-stacked-select">Select Categorie</label>
+      <div class="uk-form-controls">
+        <select class="uk-select" id="form-stacked-select" name="categorie" [(ngModel)]="boock_data.categorie"
+                #categorie="ngModel">
+          <div *ngIf="categorie.invalid && (categorie.dirty || categorie.touched)"
+               class="alert alert-danger">
+
+            <div *ngIf="boock_name.errors.required" class="uk-alert-danger" uk-alert>
+              categorie is required.
+            </div>
+          </div>
+          <option>Drama</option>
+          <option>Romance</option>
+          <option>Health</option>
+          <option>History</option>
+          <option>Math</option>
+          <option>Fantasy</option>
+          <option>Science fiction	</option>
+          <option>Book review</option>
+          <option>Autobiography</option>
+          <option>Crime</option>
+          <option>Horror</option>
+          <option>Paranormal romance	</option>
+          <option>Travel</option>
+          <option>Self help</option>
+          <option>Religion, spirituality, and new age</option>
+          <option>Cookbook</option>
+          <option>Memoir</option>
+          <option>Tutoriel</option>
+          <option>Motivation</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="5">Cover Image</label>
+      <div class="uk-form-controls">
+        <input class="uk-input file"  id="5" type="file" placeholder="Some text..." name="picture" [(ngModel)]="boock_data.picture"
+               required minlength="4" appForbiddenName="bob"
+               #picture="ngModel">
+        <div *ngIf="picture.invalid && (picture.dirty || picture.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="picture.errors.required" class="uk-alert-danger" uk-alert>
+            picture is required.
+          </div>
+          <div *ngIf="picture.errors.minlength" class="uk-alert-danger" uk-alert>
+            picture must be at least 4 characters long.
+          </div>
+          <div *ngIf="picture.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+            picture cannot be Bob.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="uk-margin">
+
+      <div class="uk-form-controls">
+        <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" (click)="insertBoock()">Add To Library</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,61 @@
+
+
+
+<div class="uk-card uk-card-default uk-width-1-2@m conter">
+  <div class="uk-card-header">
+    <div class="uk-grid-small uk-flex-middle" uk-grid>
+      <div class="uk-width-auto">
+        <img class="uk-border-circle" width="100" height="100" src="assets/images/login.png">
+      </div>
+      <div class="uk-width-expand">
+        <iframe name="date du jour"
+                id="date-du-jour"
+                style="width:105px;height:75px;"
+                src="https://www.mathieuweb.fr/calendrier/date-jour-bleu2.html"
+                scrolling="no" frameborder="0" allowtransparency="true"></iframe>      </div>
+    </div>
+  </div>
+  <div class="uk-card-body">
+    <form class="uk-form-stacked"  #form="ngForm" (ngSubmit)="saveLogin(form.value)">
+      <legend class="uk-legend">Enter </legend>
+      <div class="uk-margin">
+        <input class="uk-input" type="email" placeholder="your email" name="email" [(ngModel)]="user.email" minlength="4" appForbiddenName="bob"
+               #email="ngModel" ngModel required >
+
+        <div *ngIf="email.invalid && ( email.touched) || (email.dirty)" class="uk-alert-success" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          <div *ngIf="email.errors?.required">
+            Email is required.
+          </div>
+          <div *ngIf="email.errors?.minlength">
+            Email must be :exemple@email.company
+          </div>
+          <div *ngIf="email.errors?.forbiddenName">
+            Nom ne has not Bob.
+          </div>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <input class="uk-input" type="password" placeholder="password" name="email" [(ngModel)]="user.password" minlength="4" appForbiddenName="bob"
+               #password="ngModel" ngModel required >
+        <div *ngIf="password.invalid && ( password.touched) || (password.dirty)" class="uk-alert-success" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          <div *ngIf="password.errors?.required">
+            password is required.
+          </div>
+          <div *ngIf="password.errors?.minlength">
+            password must be :exemple@email.company
+          </div>
+          <div *ngIf="password.errors?.forbiddenName">
+            password has not  Bob.
+          </div>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <button class="uk-button uk-button-primary" type="button">Enregestrer</button>
+      </div>
+    </form>  </div>
+  <div class="uk-card-footer">
+    <a href="#" class="uk-button uk-button-text">Read more</a>
+  </div>
+</div>

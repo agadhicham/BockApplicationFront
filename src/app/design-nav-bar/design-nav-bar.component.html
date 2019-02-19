@@ -1,0 +1,139 @@
+<nav class="uk-navbar-container" uk-navbar>
+
+  <div class="uk-navbar-left">
+
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="#">Active</a></li>
+      <li>
+        <a href="#">Parent</a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">Item</a></li>
+    </ul>
+
+  </div>
+
+  <div class="uk-navbar-right">
+
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a  routerLink="/regester" routerLinkActive="active">Register</a></li>
+      <li class="uk-active"><a  routerLink="/add" routerLinkActive="active">Add new Bock</a></li>
+      <li class="uk-active"><a  routerLink="/mybook" routerLinkActive="active">Table of bocks</a></li>
+
+      <li>
+        <a href="#">New</a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li class="uk-active"><a  href="#modal-full" uk-toggle>Create your account</a></li>
+            <li><a href="#">Up your account</a></li>
+            <li><a (click)="toAdd()">delete it !!</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+  <div id="modal-full" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+      <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+      <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+        <div class="uk-background-cover" style="background-image: url('assets/images/login.jpg');" uk-height-viewport></div>
+
+
+
+        <div class="uk-card uk-card-default uk-width-1-2@m">
+          <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img class="uk-border-circle" width="200" height="200" src="assets/images/icone_login.png">
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom"> <h1>New authentication</h1></h3>
+                <p class="uk-text-meta uk-margin-remove-top">
+                  <iframe name="date du jour"
+                          id="date-du-jour"
+                          style="width:105px;height:75px;"
+                          src="https://www.mathieuweb.fr/calendrier/date-jour-bleu2.html"
+                          scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="uk-card-body">
+
+
+
+            <div class="uk-padding-large uk-card uk-card-default uk-card-large uk-card-body">
+
+              <form class="uk-form-stacked"  #form="ngForm" (ngSubmit)="regesterUser(form.value)">
+
+                  <div class="uk-container">
+                  <label class="uk-form-label" >Personal email</label>
+                    <div class="uk-margin">
+                    <input class="uk-input"  type="text" placeholder="Some text..." name="email" [(ngModel)]="user.email"   minlength="4" appForbiddenName="bob"
+                           #email="ngModel" ngModel required >
+                      <div *ngIf="email.invalid && ( email.touched) || (email.dirty)" class="uk-alert-primary" uk-alert >
+                        <a class="uk-alert-close"  uk-close></a>
+                      <div *ngIf="email.errors?.required">
+                        Email is required.
+                      </div>
+                      <div *ngIf="email.errors?.minlength">
+                        Email must be :exemple@email.company
+                      </div>
+                      <div *ngIf="email.errors?.forbiddenName">
+                        Nom ne peut pas Bob.
+                      </div>
+                      <div *ngIf="email.errors?.untouched">
+                        Nom ne peut pas Bob.
+                      </div>
+                    </div>
+                  </div>
+                    </div>
+
+
+
+                <div class="uk-container">
+                  <label class="uk-form-label" >Password</label>
+                  <div class="uk-margin">
+                    <input class="uk-input"  type="password" placeholder="password" name="password" [(ngModel)]="user.password"   minlength="4" appForbiddenName="bob"
+                           #password="ngModel" ngModel required >
+                    <div *ngIf="password.invalid && ( password.touched) || (password.dirty)" class="uk-alert-primary" uk-alert>
+                      <a class="uk-alert-close"  uk-close></a>
+                      <div *ngIf="password.errors?.required">
+                        Email is required.
+                      </div>
+                      <div *ngIf="password.errors?.minlength">
+                        Email must be :exemple@email.company
+                      </div>
+                      <div  *ngIf="password.errors?.forbiddenName">
+                        Nom ne peut pas Bob.
+                      </div>
+                      <div *ngIf="password.errors?.untouched">
+                        Nom ne peut pas Bob.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="uk-container">
+                  <label class="uk-form-label" ></label>
+                  <div class="uk-margin">
+                    <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" (click)="regesterUser()">Save</button>
+                  </div>
+                </div>
+                  <a (click)="toAdd()" class="uk-button uk-button-text">Direct Login</a>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+</nav>

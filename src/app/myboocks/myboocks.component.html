@@ -1,0 +1,195 @@
+<div class="uk-child-width-1-5@s uk-grid-match" uk-grid >
+  <div *ngFor="let boock of itemArray">
+    <div class="uk-card uk-card-default uk-card-hover">
+      <div class="uk-card-media-top">
+        <img src="assets/images/boock11.jpg" alt="" class="uk-align-center uk-margin-remove-adjacent" >
+      </div>
+      <div class="uk-card-body">
+        <h2 class="uk-card-title">{{boock.boock_name}}</h2>
+        <h4 class=" uk-text-primary">{{boock.boock_autor}}</h4>
+        <h4 class= "uk-text-success">{{boock.date_storage}}</h4>
+        <p>{{boock.resume}}</p>
+      </div>
+      <td uk-margin>
+        <div uk-margin>
+          <button class="uk-button uk-button-danger uk-button-small"  uk-toggle="target: #modal-example1" (click)="editeForme(boock.$key)">Supprimer</button>
+          <button class="uk-button uk-button-primary uk-button-small"  uk-toggle="target: #modal-example" (click)="editeForme(boock.$key)">Modifier</button>
+
+        </div>
+      </td>
+      <div id="modal-example" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Modifier </h2>
+          <fieldset class="uk-fieldset">
+            <form>
+            <div class="uk-margin">
+                <label class="">boock_autor</label>
+                <input class="uk-input" type="text" placeholder="" name="boock_autor" [(ngModel)]="boock_data.boock_autor">
+              </div>
+              <div class="uk-margin">
+                <label class="">boock_name</label>
+                <input class="uk-input" type="text" placeholder="" name="boock_name" [(ngModel)]="boock_data.boock_name">
+              </div>
+              <div class="uk-margin">
+                <label class="">categorie</label>
+                <input class="uk-input" type="text"placeholder="" name="categorie"   [(ngModel)]="boock_data.categorie">
+              </div>
+              <div class="uk-margin">
+                <label class="">date_storage</label>
+                <input class="uk-input" type="text" placeholder=" " name="date_storage" [(ngModel)]="boock_data.date_storage">
+              </div>
+              <div class="uk-margin">
+                <label class="">edition</label>
+                <input class="uk-input" type="tel"   placeholder=""     name="edition"       [(ngModel)]="boock_data.edition">
+              </div>
+              <div class="uk-margin">
+                <label class="">picture</label>
+                <input class="uk-input" type="text" placeholder="" name="picture"      [(ngModel)]="boock_data.picture">
+              </div>
+              <div class="uk-margin">
+                <label class="">resume</label>
+                <input class="uk-input" type="text" placeholder=" " name="resume"       [(ngModel)]="boock_data.resume">
+              </div>
+            </form>
+          </fieldset>
+          <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Sortir</button>
+            <button class="uk-button uk-button-primary uk-button-small" (click)="upBoock(boock.$key)">Enregestrer</button>        </p>
+        </div>
+      </div>
+
+      <div class="uk-card-footer uk-align-center uk-margin-remove-adjacent">
+        <p uk-margin class="uk-align-center uk-margin-remove-adjacent" >
+          <button class="uk-button uk-button-default"  href="#modal-sections1" (click)="editeForme(boock.$key)"  uk-close uk-toggle>edit</button>
+          <button class="uk-button uk-button-primary">mor</button>
+          <button class="uk-modal-close-large uk-close-large" href="#modal-sections" (click)="editeForme(boock.$key)"  uk-close uk-toggle></button>
+
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+<div>
+<table>
+  <tr  >
+    <th>name book</th><th>name autor</th><th>date storage</th><th>resume</th><th>categorie</th><th>picture</th>
+  </tr >
+  <tr *ngFor="let boock of itemArray">
+    <td>{{boock.boock_name}}</td>
+    <td>{{boock.boock_autor}}</td>
+    <td>{{boock.date_storage}}</td>
+    <td>{{boock.resume}}</td>
+    <td>{{boock.categorie}}</td>
+    <td>{{boock.picture}}</td>
+    <td>
+      <button  class="uk-button uk-button-danger uk-button-small" (click)="deleteBook(boock.$key)" >Delete it</button>
+      <button class="uk-button uk-button-default"  href="#modal-sections12" (click)="editeForme(boock.$key)"  uk-close uk-toggle>edit</button>
+
+      <div id="modal-sections12" uk-modal>
+        <div class="uk-modal-dialog">
+          <button class="uk-modal-close-default" type="button" uk-close></button>
+          <div class="uk-modal-header">
+            <h2 class="uk-modal-title uk-text-warning" 	>Update information</h2>
+          </div>
+          <div class="uk-modal-body">
+            <legend class="uk-legend">Update Boock Informations</legend>
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="boock_name" name="boock_name" [(ngModel)]="boock_data.boock_autor">
+            </div>
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="boock_autor" name="boock_autor" [(ngModel)]="boock_data.boock_name">
+            </div>
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="date_storage" name="date_storage" [(ngModel)]="boock_data.date_storage">
+            </div>
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="edition" name="edition" [(ngModel)]="boock_data.edition">
+            </div>
+            <div class="uk-margin">
+
+            </div>
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="resume" name="resume" [(ngModel)]="boock_data.resume">
+            </div>
+
+            <div class="uk-margin">
+              <input class="uk-input" type="text" placeholder="resume" name="categorie"[(ngModel)]="boock_data.categorie">
+            </div>
+
+            <div class="uk-margin">
+              <input class="uk-input" type="text"  placeholder="picture" name="picture" [(ngModel)]="boock_data.picture">
+            </div>
+          </div>
+          <div class="uk-modal-footer uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close uk-button-small" type="button">Cancel</button>
+            <button class="uk-button uk-button-danger uk-button-small" type="button" (click)="upBoock(boock.$key)" >Save change</button>
+          </div>
+        </div>
+      </div>
+
+    </td>
+  </tr>
+</table>
+
+</div>
+
+
+<div id="modal-sections" uk-modal>
+  <div class="uk-modal-dialog">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-modal-header">
+      <h2 class="uk-modal-title uk-text-warning" 	>Delete information</h2>
+    </div>
+    <div class="uk-modal-body">
+      <h4 class=" uk-text-danger	">
+        Are sur to delete this boock !!
+      </h4>
+    </div>
+    <div class="uk-modal-footer uk-text-right">
+      <input type="hidden" >
+      <button class="uk-button uk-button-default uk-modal-close uk-button-small" type="button">Cancel</button>
+      <button  class="uk-button uk-button-danger uk-button-small" (click)="deleteBook(key)" >Delete it</button>
+    </div>
+  </div>
+</div>
+<div id="modal-sections1" uk-modal>
+  <div class="uk-modal-dialog">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-modal-header">
+      <h2 class="uk-modal-title uk-text-warning" 	>Update information</h2>
+    </div>
+    <div class="uk-modal-body">
+        <legend class="uk-legend">Update Boock Informations</legend>
+      <div class="uk-margin">
+        <input class="uk-input" type="text" placeholder="boock_name" name="boock_name" [(ngModel)]="boock_data.boock_name">
+      </div>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="boock_autor" name="boock_autor" [(ngModel)]="boock_data.boock_autor">
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="date_storage" name="date_storage" [(ngModel)]="boock_data.date_storage">
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="edition" name="edition" [(ngModel)]="boock_data.edition">
+        </div>
+        <div class="uk-margin">
+
+        </div>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="resume" name="resume" [(ngModel)]="boock_data.resume">
+        </div>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="resume" name="categorie"[(ngModel)]="boock_data.categorie">
+        </div>
+
+        <div class="uk-margin">
+          <input class="uk-input" type="text"  placeholder="picture" name="picture" [(ngModel)]="boock_data.picture">
+        </div>
+    </div>
+    <div class="uk-modal-footer uk-text-right">
+      <button class="uk-button uk-button-default uk-modal-close uk-button-small" type="button">Cancel</button>
+      <button class="uk-button uk-button-danger uk-button-small" (click)="upBoock($key)" >Save change</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<a href="#modal-full" uk-toggle>Open</a>
+
+<div id="modal-full" class="uk-modal-full" uk-modal>
+  <div class="uk-modal-dialog">
+    <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+    <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
+
+    <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle uk-card uk-card-primary uk-card-hover uk-card-body uk-light" uk-grid>
+      <div class="uk-background-cover" style="background-image: url('assets/images/toadd.jpg');" uk-height-viewport></div>
+      <div class="uk-padding-large ">
+        <h1>Add new boock</h1>
+        <form class="uk-form-stacked" >
+
+          <div class="uk-margin ">
+            <label class="uk-form-label">Email:</label>
+            <div class="uk-form-controls ">
+              <input class="uk-input"  type="text" placeholder="Set your email here" name="email" [(ngModel)]="email">
+            </div>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label">Password:</label>
+            <div class="uk-form-controls">
+              <input class="uk-input"  type="password" placeholder="Set your password here" name="password" [(ngModel)]="password">
+            </div>
+          </div>
+            <div class="uk-form-controls">
+              <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" (click)="regesterUser()">Save</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>

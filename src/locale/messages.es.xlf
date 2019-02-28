@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="templatesTitlea" datatype="html">
+        <source>My compte</source>
+        <target>Mi compte</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitleb" datatype="html">
+        <source>log out</source>
+        <target>log out</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlec" datatype="html">
+        <source> log in</source>
+        <target>iniciar sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitled" datatype="html">
+        <source>Register</source>
+        <target>Registro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlee" datatype="html">
+        <source>Enter</source>
+        <target>Entrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlef" datatype="html">
+        <source>Add new Bock</source>
+        <target>Añadir nuevo Bock</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitleg" datatype="html">
+        <source>Table of bocks</source>
+        <target>Mesa de bocks</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitleh" datatype="html">
+        <source>Home</source>
+        <target>Casa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlei" datatype="html">
+        <source>New</source>
+         <target>Nuevo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlek" datatype="html">
+        <source>Up your account</source>
+        <target>Sube tu cuenta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlel" datatype="html">
+        <source>delete it !!</source>
+        <target>bórralo !!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlem" datatype="html">
+        <source>new enth</source>
+        <target>nuevo entusiasmo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlen" datatype="html">
+        <source>New authentication</source>
+        <target>Nueva autentificación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitleo" datatype="html">
+        <source>Personal email</source>
+        <target>dirección de correo electrónico personal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitlep" datatype="html">
+        <source>Password</source>
+        <target>contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitleq" datatype="html">
+        <source>Save</source>
+        <target>Guardar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitler" datatype="html">
+        <source>Direct Login</source>
+        <target>Inicio de sesión directo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/design-nav-bar/design-nav-bar.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle" datatype="html">
+        <source>Modifier </source>
+        <target>Editar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle1" datatype="html">
+        <source>boock_autor</source>
+        <target>autor del libro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle2" datatype="html">
+        <source>boock_name</source>
+        <target>nombre del libro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle3" datatype="html">
+        <source>categorie</source>
+        <target>categoría</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle4" datatype="html">
+        <source>date_storage</source>
+        <target>almacenamiento de datos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle5" datatype="html">
+        <source>edition</source>
+        <target>edición</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle6" datatype="html">
+        <source>picture</source>
+        <target>imagen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle7" datatype="html">
+        <source>resume</source>
+        <target>resumen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle10" datatype="html">
+        <source>More informations</source>
+        <target>Mas informacion</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle8" datatype="html">
+        <source>Sortir</source>
+        <target>Salir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle9" datatype="html">
+        <source>Supprimer</source>
+        <target>eliminar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle11" datatype="html">
+        <source>Delete bock</source>
+        <target>Borrar bock</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle12" datatype="html">
+        <source>show</source>
+        <target>espectáculo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/table-data/table-data.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle35" datatype="html">
+        <source>Enter </source>
+        <target>Entrar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/login/login.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle33" datatype="html">
+        <source>Log In</source>
+        <target>Iniciar sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/login/login.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="templatesTitle34" datatype="html">
+        <source>Clean</source>
+        <target>Limpiar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/login/login.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

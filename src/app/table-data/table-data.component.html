@@ -1,84 +1,101 @@
 <div class="uk-padding">
 
   <table class="uk-table uk-table-hover uk-table-striped">
-    <thead>
-    <tr>
-      <th>boock_autor</th>
-      <th>boock_name</th>
-      <th>categorie</th>
-      <th>date-storige</th>
-      <th>edition</th>
-      <th>picture</th>
-      <th>resume</th>
-      <th>key</th>
 
-    </tr>
-    </thead>
-    <tbody>
     <tr *ngFor="let boock of itemArray  | paginate: { itemsPerPage: 8, currentPage: pageActuel }" >
-      <td>{{ boock.boock_autor }}</td>
-      <td>{{ boock.boock_name }}</td>
-      <td>{{ boock.categorie }}</td>
-      <td>{{ boock.date_storage }}</td>
-      <td>{{ boock.edition }}</td>
-      <td>{{ boock.picture }}</td>
-      <td>{{ boock.resume }}</td>
-
-      <td uk-margin>
-        <div uk-margin>
-          <div class="example-button-row">
-            <button mat-raised-button color="primary" uk-toggle="target: #modal-example" (click)="editeForme(boock.$key)" >edit</button>
-            <button mat-raised-button color="warn" uk-toggle="target: #modal-example1" (click)="editeForme(boock.$key)">Delete bock</button>
-          </div>
-        </div>
-      </td>
       <div id="modal-example" uk-modal>
-        <div class="uk-modal-dialog uk-modal-body">
-          <h2 class="uk-modal-title">Modifier </h2>
-          <fieldset class="uk-fieldset">
-              <div class="uk-margin">
-                <label class="">boock_autor</label>
-                <input class="uk-input" type="text" placeholder="" name="boock_autor" [(ngModel)]="boock_data.boock_autor">
+        <div class="uk-modal-dialog uk-modal-body ">
+          <h2 class="uk-modal-title" i18n="@@templatesTitle">Editing this bock </h2>
+          <fieldset class="uk-fieldset" >
+            <div class="uk-grid">
+              <div class="uk-width-1-2">
+                <p>
+                  <mat-form-field appearance="legacy">
+                    <mat-label i18n="@@templatesTitle1" >boock_autor</mat-label>
+                    <input matInput placeholder="" [(ngModel)]="boock_data.boock_autor">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                  </mat-form-field>
+                </p>
               </div>
-              <div class="uk-margin">
-                <label class="">boock_name</label>
-                <input class="uk-input" type="text" placeholder="" name="boock_name"  [(ngModel)]="boock_data.boock_name">
+              <div class="uk-width-1-2">
+                <p>
+                  <mat-form-field appearance="legacy">
+                    <mat-label i18n="@@templatesTitle2" >boock_name</mat-label>
+                    <input matInput placeholder=""     [(ngModel)]="boock_data.boock_name">
+                    <mat-icon matSuffix>import_contacts</mat-icon>
+                  </mat-form-field>
+                </p>
               </div>
-              <div class="uk-margin">
-                <label class="">categorie</label>
-                <input class="uk-input" type="text"placeholder="" name="categorie"    [(ngModel)]="boock_data.categorie">
-              </div>
-              <div class="uk-margin">
-                <label class="">date_storage</label>
-                <input class="uk-input" type="text" placeholder=" " name="date_storage" [(ngModel)]="boock_data.date_storage">
-              </div>
-              <div class="uk-margin">
-                <label class="">edition</label>
-                <input class="uk-input" type="tel"   placeholder=""     name="edition"  [(ngModel)]="boock_data.edition">
-              </div>
-              <div class="uk-margin">
-                <label class="">picture</label>
-                <input class="uk-input" type="text" placeholder="" name="picture"      [(ngModel)]="boock_data.picture">
-              </div>
-              <div class="uk-margin">
-                <label class="">resume</label>
-                <input class="uk-input" type="text" placeholder=" " name="resume"       [(ngModel)]="boock_data.resume">
-              </div>
+              <div class="uk-width-1-2">
+                <p>
+                  <mat-form-field appearance="legacy">
+                    <mat-label i18n="@@templatesTitle3" >categorie</mat-label>
+                    <input matInput placeholder=""    [(ngModel)]="boock_data.categorie">
+                    <mat-icon matSuffix>dehaze</mat-icon>
+                  </mat-form-field>
+                </p>
+                </div>
+                <div class="uk-width-1-2">
+                  <p>
+                    <mat-form-field appearance="legacy">
+                      <mat-label i18n="@@templatesTitle4" >date_storage</mat-label>
+                      <input matInput placeholder=""  [(ngModel)]="boock_data.date_storage">
+                      <mat-icon matSuffix>event</mat-icon>
+                    </mat-form-field>
+                  </p>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <p>
+                      <mat-form-field appearance="legacy">
+                        <mat-label i18n="@@templatesTitle5" >edition</mat-label>
+                        <input matInput placeholder=""  [(ngModel)]="boock_data.edition">
+                        <mat-icon matSuffix>local_library</mat-icon>
+                      </mat-form-field>
+                    </p>
+                    </div>
+                    <div class="uk-width-1-2">
+                      <p>
+                        <mat-form-field appearance="legacy">
+                          <mat-label i18n="@@templatesTitle6" >picture</mat-label>
+                          <input matInput placeholder=""   [(ngModel)]="boock_data.picture">
+                          <mat-icon matSuffix>camera</mat-icon>
+                        </mat-form-field>
+                      </p>
+                      </div>
+                      <div class="uk-width-1-2">
+                        <p>
+                          <mat-form-field appearance="legacy">
+                            <mat-label i18n="@@templatesTitle7" >resume</mat-label>
+                            <input matInput placeholder=""  [(ngModel)]="boock_data.resume">
+                            <mat-icon matSuffix>comment</mat-icon>
+                          </mat-form-field>
+                        </p>
+                        </div>
+            </div>
           </fieldset>
           <p class="uk-text-right">
-            <button class="uk-button uk-button-default uk-modal-close" type="button">Sortir</button>
-            <button class="uk-button uk-button-primary uk-button-small" (click)="upBoock(boock.$key)">Enregestrer</button>        </p>
+            <button  mat-icon-button>
+              <mat-icon aria-label="Example icon-button with a heart icon"   class="uk-modal-close" type="button" >cancel</mat-icon>
+            </button>
+            <button  mat-icon-button color="primary">
+              <mat-icon aria-label="Example icon-button with a heart icon" (click)="upBoock(boock.$key)" >check</mat-icon>
+            </button>
+            <button  mat-icon-button color="primary">
+              <mat-icon aria-label="Example icon-button with a heart icon" type="submit">settings_backup_restore</mat-icon>
+            </button>
+          </p>
         </div>
       </div>
+      </tr>
 
 
       <div id="modal-example1" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-          <h2 class="uk-modal-title">Confermation message</h2>
-          <h2 style="color: red;text-align: center">Voulez-vous vraiment supprimer !</h2>
+          <h2 class="uk-modal-title">Confirmation Message</h2>
+          <h2 style="color: red;text-align: center">Are want to delete that bock !</h2>
           <p class="uk-text-right">
-            <button class="uk-button uk-button-default uk-button-small" type="button">Sortir</button>
-            <button class="uk-button uk-button-danger uk-button-small" (click)="deleteBook(boock.$key)">Supprimer</button>
+            <button class="uk-button uk-button-default uk-button-small uk-modal-close" type="button"    i18n="@@templatesTitle8"    >Cancel</button>
+            <button class="uk-button uk-button-danger uk-button-small" (click)="deleteBook(boock.$key)" i18n="@@templatesTitle9"    >Delete it </button>
           </p>
         </div>
       </div>
@@ -87,25 +104,159 @@
   <pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>
 
 </div>
-<div>
-  <mat-table [dataSource]="dataSource">
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef> E-Mail </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="phone">
-      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{user.phone}} </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="company">
-      <mat-header-cell *matHeaderCellDef> Company </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{user.company.name}} </mat-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+<div class="uk-child-width-1-6@m uk-grid-small uk-grid-match uk-animation-toggle"  uk-grid uk-scrollspy="cls: uk-animation-fade; target: > div > .uk-card; delay: 500; repeat: true" >
+  <div *ngFor="let boock of itemArray | paginate: { itemsPerPage: 8, currentPage: pageActuel }" class="uk-animation-toggle" tabindex="0">
+    <div *ngIf="boock.uid === myUid">
+    <div class="uk-card uk-card-default uk-card-body uk-card uk-card-hover uk-animation-scale-up">
+      <h5 class="uk-card-title">
+        {{boock.boock_autor}}</h5>
+      <h6>{{boock.boock_name}}</h6>
+      <p>{{boock.categorie}}</p>
+      <div uk-margin>
+        <div class="example-button-row">
+          <button mat-mini-fab color="primary" uk-toggle="target: #modal-example" (click)="editeForme(boock.$key)" i18n="@@templatesTitle10"  >edit</button>
+          <button mat-mini-fab color="primary" (click)="moreDetails(boock.$key)" i18n="@@templatesTitle10"  >details</button>
+          <button mat-mini-fab color="warn"   i18n="@@templatesTitle11" >Delete</button>
+          <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000">
+            <div class="">
+              <p class="uk-modal-title">Confirmation Message</p>
+              <p style="color: red;text-align: center">Are want to delete that bock !</p>
+              <p class="uk-text-right">
+                <button mat-mini-fab color="primary" (click)="deleteBook(boock.$key)" i18n="@@templatesTitle9"    >Delete it </button>
+              </p>
+            </div>
+          </div>
+          <button mat-mini-fab color="accent"  uk-toggle="target: #modal-example2" (click)="editeForme(boock.$key)" i18n="@@templatesTitle12" >show</button>
+          <div id="modal-example21" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+              <h2 class="uk-modal-title" i18n="@@templatesTitle10" >More informations</h2>
+              <fieldset class="uk-fieldset">
+                <div class="uk-margin" >
+                  {{boock.boock_autor}}
+                  <p>{{boock.date_storage}}</p>
+                  <p>{{boock.resume}}</p>
+                  <p>{{boock.edition}}</p>
+                </div>
+              </fieldset>
+              <p class="uk-text-right">
+
+                <button type="button" (click)="showOneBock()"> </button>
+                <button  mat-icon-button>
+                  <mat-icon aria-label="Example icon-button with a heart icon"  class="uk-modal-close" type="button" > cancel</mat-icon>
+                </button>
+                <button  mat-icon-button>
+                  <mat-icon aria-label="Example icon-button with a heart icon">check</mat-icon>
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="modal-example2" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body ">
+    <h2 class="uk-modal-title" i18n="@@templatesTitle">More Information</h2>
+    <fieldset class="uk-fieldset" >
+      <div class="uk-grid">
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle1" >boock_autor</mat-label>
+              <input matInput placeholder=""  disabled [(ngModel)]="boock_data.boock_autor">
+              <span class="uk-label uk-label-success"  >{{boock_data.boock_autor}}</span>
+
+              <mat-icon matSuffix>perm_identity</mat-icon>
+            </mat-form-field>
+          </p>
+
+        </div>
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle2" >boock_name</mat-label>
+              <input matInput placeholder=""   disabled  [(ngModel)]="boock_data.boock_name">
+              <span class="uk-label uk-label-success"  >{{boock_data.boock_name}}</span>
+
+              <mat-icon matSuffix>import_contacts</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle3" >categorie</mat-label>
+              <input matInput placeholder=""  disabled  [(ngModel)]="boock_data.categorie">
+              <span class="uk-label uk-label-default"  >{{boock_data.categorie}}</span>
+
+              <mat-icon matSuffix>dehaze</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle4" >date_storage</mat-label>
+              <input matInput placeholder="" disabled [(ngModel)]="boock_data.date_storage">
+              <span class="uk-label uk-label-default"  >{{boock_data.date_storage}}</span>
+
+              <mat-icon matSuffix>event</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle5" >edition</mat-label>
+              <input matInput placeholder="" disabled [(ngModel)]="boock_data.edition">
+              <span class="uk-label uk-label-warning"  >{{boock_data.edition}}</span>
+
+              <mat-icon matSuffix>local_library</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle6" >picture</mat-label>
+              <input matInput placeholder=""  disabled [(ngModel)]="boock_data.picture">
+              <span class="uk-label uk-label-warning"  >{{boock_data.picture}}</span>
+
+              <mat-icon matSuffix>camera</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="uk-width-1-2">
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label i18n="@@templatesTitle7" >resume</mat-label>
+              <input matInput placeholder="" disabled  [(ngModel)]="boock_data.resume">
+              <span class="uk-label uk-label-danger"  >{{boock_data.resume}}</span>
+
+              <mat-icon matSuffix>comment</mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+      </div>
+    </fieldset>
+    <p class="uk-text-right">
+      <button  mat-icon-button>
+        <mat-icon aria-label="Example icon-button with a heart icon"   class="uk-modal-close" type="button" >cancel</mat-icon>
+      </button>
+      <button  mat-icon-button color="primary">
+        <mat-icon aria-label="Example icon-button with a heart icon" (click)="upBoock(boock.$key)" >check</mat-icon>
+      </button>
+      <button  mat-icon-button color="primary">
+        <mat-icon aria-label="Example icon-button with a heart icon" type="submit">settings_backup_restore</mat-icon>
+      </button>
+    </p>
+  </div>
 </div>

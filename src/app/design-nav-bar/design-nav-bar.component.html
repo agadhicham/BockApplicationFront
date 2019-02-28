@@ -3,36 +3,37 @@
   <div class="uk-navbar-left">
 
     <ul class="uk-navbar-nav">
-      <li class="uk-active"><a href="#">Active</a></li>
-      <li>
-        <a href="#">Parent</a>
+      <li *ngIf="isLogged">
+        <a href="#" i18n="@@templatesTitlea">My compte</a>
         <div class="uk-navbar-dropdown">
           <ul class="uk-nav uk-navbar-dropdown-nav">
-            <li class="uk-active"><a href="#">Active</a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
+            <li><a href="#" (click)="logOut()" i18n="@@templatesTitleb">log out</a></li>
+                    <li><a href="#" routerLinkActive="active" routerLink="/regester " i18n="@@templatesTitlec"> log in</a></li>
           </ul>
         </div>
       </li>
-      <li><a href="#">Item</a></li>
     </ul>
-
   </div>
 
   <div class="uk-navbar-right">
 
     <ul class="uk-navbar-nav">
-      <li class="uk-active"><a  routerLink="/regester" routerLinkActive="active">Register</a></li>
-      <li class="uk-active"><a  routerLink="/add" routerLinkActive="active">Add new Bock</a></li>
-      <li class="uk-active"><a  routerLink="/mybook" routerLinkActive="active">Table of bocks</a></li>
-
-      <li>
-        <a href="#">New</a>
+      <li *ngIf="!isLogged" ><a  routerLink="/regester" routerLinkActive="active" i18n="@@templatesTitled">Register</a></li>
+      <li *ngIf="isLogged" ><a  routerLink="/userprofile" routerLinkActive="active" i18n="@@templatesTitled">User profile</a></li>
+      <li *ngIf="!isLogged" ><a  routerLink="/login" routerLinkActive="active" i18n="@@templatesTitlee">Enter</a></li>
+      <li *ngIf="isLogged" > <a class="uk-button uk-button-default" href="#modal-full1" uk-toggle>New add</a></li>
+      <li *ngIf="isLogged" ><a  routerLink="/add" routerLinkActive="active" i18n="@@templatesTitlef">Add new Bock</a></li>
+      <li *ngIf="isLogged"><a  routerLink="/mybook" routerLinkActive="active" i18n="@@templatesTitleg">Table of bocks</a></li>
+      <li *ngIf="isLogged"><a  routerLink="/home" routerLinkActive="active" i18n="@@templatesTitleh">Home</a></li>
+      <li *ngIf="isLogged">
+        <a href="#" i18n="@@templatesTitlei">New</a>
         <div class="uk-navbar-dropdown">
           <ul class="uk-nav uk-navbar-dropdown-nav">
-            <li class="uk-active"><a  href="#modal-full" uk-toggle>Create your account</a></li>
-            <li><a href="#">Up your account</a></li>
-            <li><a (click)="toAdd()">delete it !!</a></li>
+            <li class="uk-active"><a  href="#modal-full" uk-toggle i18n="@@templatesTitleg">Create your account</a></li>
+            <li><a href="#" i18n="@@templatesTitlek">Up your account</a></li>
+            <li><a (click)="toAdd()" i18n="@@templatesTitlel">delete it !!</a></li>
+            <li><a  routerLinkActive="active" routerLink="/regester" i18n="@@templatesTitlem">new enth</a></li>
+
           </ul>
         </div>
       </li>
@@ -54,7 +55,7 @@
                 <img class="uk-border-circle" width="200" height="200" src="assets/images/icone_login.png">
               </div>
               <div class="uk-width-expand">
-                <h3 class="uk-card-title uk-margin-remove-bottom"> <h1>New authentication</h1></h3>
+                <h3 class="uk-card-title uk-margin-remove-bottom"> <h1 i18n="@@templatesTitlen">New authentication</h1></h3>
                 <p class="uk-text-meta uk-margin-remove-top">
                   <iframe name="date du jour"
                           id="date-du-jour"
@@ -67,68 +68,28 @@
             </div>
           </div>
           <div class="uk-card-body">
-
-
-
             <div class="uk-padding-large uk-card uk-card-default uk-card-large uk-card-body">
-
-              <form class="uk-form-stacked"  #form="ngForm" (ngSubmit)="regesterUser(form.value)">
-
+              <form class="uk-form-stacked">
                   <div class="uk-container">
-                  <label class="uk-form-label" >Personal email</label>
+                  <label class="uk-form-label" i18n="@@templatesTitleo">Personal email</label>
                     <div class="uk-margin">
-                    <input class="uk-input"  type="text" placeholder="Some text..." name="email" [(ngModel)]="user.email"   minlength="4" appForbiddenName="bob"
-                           #email="ngModel" ngModel required >
-                      <div *ngIf="email.invalid && ( email.touched) || (email.dirty)" class="uk-alert-primary" uk-alert >
-                        <a class="uk-alert-close"  uk-close></a>
-                      <div *ngIf="email.errors?.required">
-                        Email is required.
-                      </div>
-                      <div *ngIf="email.errors?.minlength">
-                        Email must be :exemple@email.company
-                      </div>
-                      <div *ngIf="email.errors?.forbiddenName">
-                        Nom ne peut pas Bob.
-                      </div>
-                      <div *ngIf="email.errors?.untouched">
-                        Nom ne peut pas Bob.
-                      </div>
-                    </div>
+                    <input class="uk-input"  type="text" placeholder="Some text..." name="email" [(ngModel)]="email" required >
                   </div>
                     </div>
-
-
-
                 <div class="uk-container">
-                  <label class="uk-form-label" >Password</label>
+                  <label class="uk-form-label" i18n="@@templatesTitlep">Password</label>
                   <div class="uk-margin">
-                    <input class="uk-input"  type="password" placeholder="password" name="password" [(ngModel)]="user.password"   minlength="4" appForbiddenName="bob"
-                           #password="ngModel" ngModel required >
-                    <div *ngIf="password.invalid && ( password.touched) || (password.dirty)" class="uk-alert-primary" uk-alert>
-                      <a class="uk-alert-close"  uk-close></a>
-                      <div *ngIf="password.errors?.required">
-                        Email is required.
-                      </div>
-                      <div *ngIf="password.errors?.minlength">
-                        Email must be :exemple@email.company
-                      </div>
-                      <div  *ngIf="password.errors?.forbiddenName">
-                        Nom ne peut pas Bob.
-                      </div>
-                      <div *ngIf="password.errors?.untouched">
-                        Nom ne peut pas Bob.
-                      </div>
-                    </div>
+                    <input class="uk-input"  type="password" placeholder="password" name="password" [(ngModel)]="password" required >
                   </div>
                 </div>
 
                 <div class="uk-container">
                   <label class="uk-form-label" ></label>
                   <div class="uk-margin">
-                    <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" (click)="regesterUser()">Save</button>
+                    <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" (click)="regesterUser()" i18n="@@templatesTitleq">Save</button>
                   </div>
                 </div>
-                  <a (click)="toAdd()" class="uk-button uk-button-text">Direct Login</a>
+                  <a (click)="toAdd()" class="uk-button uk-button-text" i18n="@@templatesTitler">Direct Login</a>
               </form>
           </div>
         </div>
@@ -137,3 +98,187 @@
   </div>
     </div>
 </nav>
+<!--<a class="uk-button uk-button-default" href="#modal-full1" uk-toggle>Open</a>-->
+<div id="modal-full1" class="uk-modal-full" uk-modal>
+  <div class="uk-modal-dialog">
+    <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+    <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+      <div class="uk-background-cover" style="background-image: url('assets/images/toadd.jpg');" uk-height-viewport></div>
+      <div class="uk-padding-large">
+        <h1>Add new boock</h1>
+        <form class="uk-form-stacked"  ngSubmit="(f.value)" #f="ngForm">
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="1">Name Of Boock</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="1" type="text" placeholder="Some text..." name="boock_name" [(ngModel)]="boock_data.boock_name"
+                     required minlength="4" appForbiddenName="bob"
+                     #boock_name="ngModel">
+              <div *ngIf="boock_name.invalid && (boock_name.dirty || boock_name.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="boock_name.errors.required" class="uk-alert-danger" uk-alert>
+                  boock_name is required.
+                </div>
+                <div *ngIf="boock_name.errors.minlength" class="uk-alert-danger" uk-alert>
+                  boock_name must be at least 4 characters long.
+                </div>
+                <div *ngIf="boock_name.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+                  boock_name cannot be Bob.
+                </div>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="2">Autor Of Boock</label>
+              <div class="uk-form-controls">
+                <input class="uk-input" id="2" type="text" placeholder="Some text..." name="boock_autor" [(ngModel)]="boock_data.boock_autor"
+                       required minlength="4" appForbiddenName="bob"
+                       #boock_autor="ngModel">
+
+                <div *ngIf="boock_autor.invalid && (boock_autor.dirty || boock_autor.touched)"
+                     class="alert alert-danger">
+
+                  <div *ngIf="boock_autor.errors.required" class="uk-alert-danger" uk-alert>
+                    boock_autor is required.
+                  </div>
+                  <div *ngIf="boock_autor.errors.minlength" class="uk-alert-danger" uk-alert>
+                    boock_autor must be at least 4 characters long.
+                  </div>
+                  <div *ngIf="boock_autor.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+                    boock_autor cannot be Bob.
+                  </div>
+                </div>
+              </div>
+            </div> <div class="uk-margin">
+            <label class="uk-form-label" for="3">Date of storage</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="3" type="date" placeholder="Some text..." name="date_storage" [(ngModel)]="boock_data.date_storage"
+                     required minlength="4" appForbiddenName="bob"
+                     #date_storage="ngModel">
+              <div *ngIf="date_storage.invalid && (date_storage.dirty || date_storage.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="date_storage.errors.required" class="uk-alert-danger" uk-alert>
+                  date_storage is required.
+                </div>
+                <div *ngIf="date_storage.errors.minlength" class="uk-alert-danger" uk-alert>
+                  date_storage must be at least 4 characters long.
+                </div>
+                <div *ngIf="date_storage.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+                  date_storage cannot be Bob.
+                </div>
+              </div>
+            </div>
+          </div> <div class="uk-margin">
+            <label class="uk-form-label" for="4">Edition</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="4" type="text" placeholder="Some text..." name="edition" [(ngModel)]="boock_data.edition"
+                     required minlength="4" appForbiddenName="bob"
+                     #edition="ngModel">
+              <div *ngIf="edition.invalid && (edition.dirty || edition.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="edition.errors.required" class="uk-alert-danger" uk-alert>
+                  edition is required.
+                </div>
+                <div *ngIf="edition.errors.minlength" class="uk-alert-danger" uk-alert>
+                  edition must be at least 4 characters long.
+                </div>
+                <div *ngIf="edition.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+                  edition cannot be Bob.
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" >Short resume</label>
+              <div class="uk-form-controls">
+              <textarea class="uk-textarea" rows="5" placeholder="Textarea"  name="resume" [(ngModel)]="boock_data.resume"
+                        required minlength="20" appForbiddenName="bob"
+                        #resume="ngModel"></textarea>
+                <div *ngIf="resume.invalid && (resume.dirty || resume.touched)"
+                     class="alert alert-danger">
+
+                  <div *ngIf="resume.errors.required" class="uk-alert-danger" uk-alert>
+                    resume is required.
+                  </div>
+                  <div *ngIf="resume.errors.minlength" class="uk-alert-danger" uk-alert>
+                    resume must be at least 20 characters long.
+                  </div>
+                  <div *ngIf="resume.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+                    resume cannot be Bob.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label class="uk-form-label" for="form-stacked-select">Select Categorie</label>
+              <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select" name="categorie" [(ngModel)]="boock_data.categorie"
+                        required minlength="4" appForbiddenName="bob"   #categorie="ngModel">
+                  <div *ngIf="categorie.invalid && (categorie.dirty || categorie.touched)"
+                       class="alert alert-danger">
+
+                    <div *ngIf="categorie.errors.required" class="uk-alert-danger" uk-alert>
+                      categorie is required.
+                    </div>
+                  </div>
+                  <option>Drama</option>
+                  <option>Romance</option>
+                  <option>Health</option>
+                  <option>History</option>
+                  <option>Math</option>
+                  <option>Fantasy</option>
+                  <option>Science fiction	</option>
+                  <option>Book review</option>
+                  <option>Autobiography</option>
+                  <option>Crime</option>
+                  <option>Horror</option>
+                  <option>Paranormal romance	</option>
+                  <option>Travel</option>
+                  <option>Self help</option>
+                  <option>Religion, spirituality, and new age</option>
+                  <option>Cookbook</option>
+                  <option>Memoir</option>
+                  <option>Tutoriel</option>
+                  <option>Motivation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="uk-margin">
+              <label class="uk-form-label" for="5">Cover Image</label>
+              <div class="uk-form-controls">
+                <input class="uk-input file"  id="5" type="file" placeholder="Some text..." name="picture" [(ngModel)]="boock_data.picture"
+                       required minlength="4" appForbiddenName="bob"
+                       #picture="ngModel">
+                <div *ngIf="picture.invalid && (picture.dirty || picture.touched)"
+                     class="alert alert-danger">
+
+                  <div *ngIf="picture.errors.required" class="uk-alert-danger" uk-alert>
+                    picture is required.
+                  </div>
+                  <div *ngIf="picture.errors.minlength" class="uk-alert-danger" uk-alert>
+                    picture must be at least 4 characters long.
+                  </div>
+                  <div *ngIf="picture.errors.forbiddenName" class="uk-alert-danger" uk-alert>
+                    picture cannot be Bob.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="uk-margin">
+
+              <div class="uk-form-controls">
+              <!-- <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" type="submit" [disabled]="!f.valid" (click)="insertBoock()">Add To Library</button>-->
+                <button mat-flat-button color="primary"  class="btn2"  (click)="insertBoock()" type="submit" [disabled]="!f.valid" >Add To Library</button>
+                <button mat-flat-button color="warn"  class="btn2" type="reset"  >Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

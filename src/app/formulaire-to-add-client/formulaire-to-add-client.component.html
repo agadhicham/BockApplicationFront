@@ -1,4 +1,4 @@
-<form class="uk-form-stacked">
+<form class="uk-form-stacked" #f="ngForm" ngSubmit="(f.value)">
 
   <div class="uk-margin">
     <label class="uk-form-label" for="1">Name Of Boock</label>
@@ -161,7 +161,7 @@
     <div class="uk-margin">
 
       <div class="uk-form-controls">
-        <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" (click)="insertBoock()">Add To Library</button>
+        <button  class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" type="submit" (click)="insertBoock()" [disabled]="!f.valid">Add To Library</button>
       </div>
     </div>
   </div>

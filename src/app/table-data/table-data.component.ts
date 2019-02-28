@@ -17,12 +17,18 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 export class TableDataComponent implements OnInit {
 
 
+  uid: any;
 
+  pass:string=''
+  // user:User=new User();
+  email:string=''
+  password:string=''
+  isLogged: boolean= false;
 
   itemsList: AngularFireList<any>
   itemArray = [];
   boock:Boock=new Boock();
-
+  myUid:any
   pageActuel: number=1;
 
   boock_data={
@@ -32,7 +38,8 @@ export class TableDataComponent implements OnInit {
                date_storage:'',
                edition:'',
                picture:'',
-               resume:''
+               resume:'',
+
    }
 
 
@@ -46,10 +53,14 @@ export class TableDataComponent implements OnInit {
       })
     })
     console.log(this.itemArray)
+    this.myUid= localStorage.getItem('uid')
+
+
 
   }
 
   ngOnInit() {
+    this.myUid= localStorage.getItem('uid')
   }
 
   deleteBook($key){
@@ -61,6 +72,16 @@ export class TableDataComponent implements OnInit {
 
   }
 
+  showOneBock(){
+window.location.reload()  //  this.router.navigate(['mybook']);
+    }
+
+  moreDetails($key){
+   console.log($key)
+    this.router.navigate(['detail',$key])
+  }
+
+
   upBoock($key){
     this.boock_data.boock_autor
     this.boock_data.boock_name
@@ -69,6 +90,7 @@ export class TableDataComponent implements OnInit {
     this.boock_data.edition
     this.boock_data.picture
     this.boock_data.resume
+
     this.itemsList.set($key,{
       boock_autor :    this.boock_data.boock_autor,
       boock_name :    this.boock_data.boock_name,
@@ -76,10 +98,9 @@ export class TableDataComponent implements OnInit {
       date_storage :   this.boock_data.date_storage,
       edition :       this.boock_data.edition,
       picture :       this.boock_data.picture,
-      resume :        this.boock_data.resume
-
+      resume :        this.boock_data.resume,
     })
-    this.itemArray = []
+   this.itemArray = []
     this.router.navigate(['mybook']);
 
   }
@@ -96,7 +117,9 @@ export class TableDataComponent implements OnInit {
         this.boock_data.date_storage = value['date_storage'];
         this.boock_data.edition = value['edition'];
         this.boock_data.picture = value['picture'];
-        this.boock_data.resume = value['resume']
+        this.boock_data.resume = value['resume'];
+
+
 
       }
 
@@ -113,4 +136,5 @@ export class itemListClass {
   resume:string;
   categorie:string;
   picture:string;
+
 }

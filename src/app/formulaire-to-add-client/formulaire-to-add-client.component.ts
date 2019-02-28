@@ -6,6 +6,7 @@ import {
   AngularFireStorage
 } from "@angular/fire/storage";
 import {Observable} from "rxjs";
+import {AngularFireAuth} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-formulaire-to-add-client',
@@ -29,8 +30,28 @@ export class FormulaireToAddClientComponent implements OnInit {
   downoldUrl: Observable<number>
 
   itemList: AngularFireList<any>
-  constructor(public db:AngularFireDatabase, public router:Router, private filestore:AngularFireStorage) {
-    this.itemList = db.list('boocks')  }
+
+  uid: any;
+  email: string;
+  constructor(public db:AngularFireDatabase, public router:Router, private filestore:AngularFireStorage,   private fire: AngularFireAuth) {
+    this.itemList = db.list('boocks')
+    let user = localStorage.getItem('email');
+    this.email= user
+    console.log(user)
+    console.log('*************************')
+    this.uid = localStorage.getItem('uid');
+   // console.log('uid: '+this.uid)
+
+
+    this.fire.authState.subscribe(auth=>{
+      if (auth){
+        this.uid= auth.uid
+        console.log('uid: '+this.uid)
+         }
+
+         })
+
+    }
 
   ngOnInit() {
 
@@ -55,6 +76,8 @@ export class FormulaireToAddClientComponent implements OnInit {
         resume :       this.boock_data.resume,
         categorie:     this.boock_data.categorie,
         picture :      this.boock_data.picture,
+        email: this.email,
+        uid: this.uid
 
       })
     this.router.navigate(['mybook']);
